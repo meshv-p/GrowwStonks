@@ -7,8 +7,9 @@ import { useParams } from 'next/navigation';
 
 
 const StockDetail = async ({ params }) => {
+    let { name } = useParams();
 
-    const data = await getStockDetails();
+    const data = await getStockDetails(name);
     const stats = [
         { name: 'Market Cap', stat: convertToNumber(data.MarketCapitalization) },
         { name: 'P/E Ratio', stat: data.PERatio },
@@ -178,8 +179,7 @@ const StockDetail = async ({ params }) => {
 
 export default StockDetail
 
-async function getStockDetails() {
-    let { name } = useParams();
+async function getStockDetails(name) {
 
 
     const res = await fetch('https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo', { cache: 'force-cache' }, { next: { revalidate: 3600 } })
