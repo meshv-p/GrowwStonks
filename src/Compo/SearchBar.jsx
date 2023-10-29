@@ -146,7 +146,7 @@ export const SearchBar = () => {
                         base: "max-w-full sm:max-w-[10rem] h-10",
                         mainWrapper: "h-full",
                         input: "text-small",
-                        inputWrapper: "h-full mt-2 font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 w-80",
+                        inputWrapper: "h-full mt-2 font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 w-80 suggested-search-bar",
                     }}
                     placeholder="Type to search..."
                     size="md"
@@ -184,7 +184,7 @@ export const SearchBar = () => {
                                 >
 
 
-                                    <ListboxItem description='Appl'
+                                    <ListboxItem description='Appl' className='suggested-item' onClick={() => router.push('/stocks/' + key)}
                                     >
                                         Apple
                                     </ListboxItem>

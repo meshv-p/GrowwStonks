@@ -13,7 +13,9 @@ export function Providers({ children }) {
         <NextUIProvider>
             <GlobalProvider >
                 <StocksProvider>
-                    <App children={children} />
+                    <App >
+                        {children}
+                    </App>
                 </StocksProvider>
             </GlobalProvider>
 
